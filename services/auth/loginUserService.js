@@ -36,11 +36,11 @@ module.exports = {
 
             const refreshToken = jwt.sign(
                 {userId: user.id},
-                config.JWT_REFRESH_SECRET,
+                        config.JWT_REFRESH_SECRET,
                 {expiresIn: config.REFRESH_TOKEN_LIFETIME}
             )
 
-            res.json({accessToken, refreshToken: refreshToken, userId: user.id})
+            res.json({accessToken, refreshToken, user})
 
         } catch (e) {
             res.status(500).json({message: 'Something went wrong, please try again'})
