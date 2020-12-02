@@ -1,6 +1,10 @@
 const {validationResult} = require('express-validator')
 const User = require('../../models/User.model')
+const EmailConfirmationToken = require('../../models/EmailConfirmation.model')
 const bcrypt = require("bcrypt");
+const sentEmail = require('../../helpers/sendEmailSignupConfirmation')
+const jwt = require('jsonwebtoken');
+const {config} = require('../../config')
 
 module.exports = {
     createNewUser: async (req, res) => {
@@ -24,7 +28,16 @@ module.exports = {
 
             const hashedPassword = await bcrypt.hash(password, 12)
             const user = new User({ email, password: hashedPassword })
-            console.log(user)
+
+            const token = jwt.sign(
+                {userId: user.id},
+                config.JWT_CONFIRM_EMAIL_SECRET,
+                {expiresIn: config.JWT_CONFIRM_EMAIL_LIFETIME});
+
+            const emailConfirmationToken = new EmailConfirmationToken({_userId: user.id, token})
+            await emailConfirmationToken.save();
+
+            await sentEmail(user, token)
             await user.save()
 
             res.status(201).json({ message: 'User created' })

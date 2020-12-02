@@ -24,4 +24,9 @@ router.post(
     authController.login
 )
 
+router.post(
+    '/confirm',
+    authController.confirm
+)
+
 module.exports = router
