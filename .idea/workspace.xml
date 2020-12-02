@@ -10,22 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="auth works">
-      <change afterPath="$PROJECT_DIR$/helpers/sendEmailSignupConfirmation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/EmailConfirmation.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/auth/confirmEmail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/emailConfirm.handlebars" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/layout.handlebars" afterDir="false" />
+    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="email confirmation works">
+      <change afterPath="$PROJECT_DIR$/services/auth/forgotPassword.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contoller/auth/authUserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/contoller/auth/authUserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/createUserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/createUserService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/index.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
@@ -95,7 +86,7 @@
       <workItem from="1606843292781" duration="75000" />
       <workItem from="1606843456279" duration="11153000" />
       <workItem from="1606896515548" duration="2657000" />
-      <workItem from="1606899458184" duration="12172000" />
+      <workItem from="1606899458184" duration="15119000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -118,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606837127544</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="email confirmation works">
+      <created>1606913814975</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606913814975</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,7 +138,8 @@
     <MESSAGE value="firs commit" />
     <MESSAGE value="first commit" />
     <MESSAGE value="auth works" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth works" />
+    <MESSAGE value="email confirmation works" />
+    <option name="LAST_COMMIT_MESSAGE" value="email confirmation works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606842845600">

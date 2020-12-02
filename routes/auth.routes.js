@@ -28,5 +28,8 @@ router.post(
     '/confirm',
     authController.confirm
 )
-
+router.post(
+    '/forgotPassword',
+    authController.forgotPassword
+)
 module.exports = router
