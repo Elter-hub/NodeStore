@@ -1,4 +1,4 @@
-const EmailConfirmation = require('../../models/EmailConfirmation.model')
+const EmailConfirmation = require('../../models/EmailConfirmationToken.model')
 const User = require('../../models/User.model')
 
 module.exports = {

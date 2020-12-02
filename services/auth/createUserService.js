@@ -1,6 +1,6 @@
 const {validationResult} = require('express-validator')
 const User = require('../../models/User.model')
-const EmailConfirmationToken = require('../../models/EmailConfirmation.model')
+const EmailConfirmationToken = require('../../models/EmailConfirmationToken.model')
 const bcrypt = require("bcrypt");
 const sentEmail = require('../../helpers/sendEmailSignupConfirmation')
 const jwt = require('jsonwebtoken');
@@ -37,7 +37,7 @@ module.exports = {
             const emailConfirmationToken = new EmailConfirmationToken({_userId: user.id, token})
             await emailConfirmationToken.save();
 
-            await sentEmail(user, token)
+            await sentEmail(user, {token}, 'Please confirm your registration!', 'emailConfirm')
             await user.save()
 
             res.status(201).json({ message: 'User created' })

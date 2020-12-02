@@ -2,7 +2,7 @@ const mailer = require('nodemailer');
 const {config} = require('../config')
 const hbs = require('nodemailer-handlebars')
 
-module.exports = async (user, token) => {
+module.exports = async (user, data, subject, template) => {
     const transport = mailer.createTransport({
         service: 'gmail',
         auth: {
@@ -25,10 +25,10 @@ module.exports = async (user, token) => {
     const mailOptions = {
         from: config.EMAIL_NAME,
         to: user.email,
-        subject: 'Please Confirm Registration',
-        template: 'emailConfirm',
+        subject: subject,
+        template: template,
         context: {
-            token: token
+            data: data
         }
     };
 

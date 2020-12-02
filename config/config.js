@@ -18,8 +18,8 @@ module.exports = {
     JWT_CONFIRM_EMAIL_SECRET: process.env.JWT_CONFIRM_EMAIL_SECRET || 'd%^&fsdnFFkmsdkfHJFAJa',
     JWT_CONFIRM_EMAIL_LIFETIME: process.env.JWT_CONFIRM_EMAIL_LIFETIME || '24h',
 
-    JWT_PASS_RESET_SECRET: process.env.JWT_PASS_RESET_SECRET || '4234&&34refFSDJNK7sdf$%^',
-    JWT_PASS_RESET_LIFETIME: process.env.JWT_PASS_RESET_LIFETIME || '24h',
+    JWT_FORGOT_PASSWORD_SECRET: process.env.JWT_FORGOT_PASSWORD_SECRET || 'eshrerhhresrhershrshshrer$@#%^!@&',
+    JWT_FORGOT_PASSWORD_LIFETIME: process.env.JWT_FORGOT_PASSWORD_LIFETIME || '24h',
 
     MONGODB_URL: process.env.MONGODB_URL || 'mongodb://localhost:27017/beverages',
 
