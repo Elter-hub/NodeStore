@@ -30,12 +30,6 @@ db.mongoose
         process.exit(1);
     });
 
-// simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to beverages store" });
-});
-
-// set port, listen for requests
 const PORT = config.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
