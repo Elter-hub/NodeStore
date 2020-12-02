@@ -22,10 +22,10 @@ module.exports = {
             await forgotPasswordToken.save();
             await sentEmail(user, [email, token], 'Reset your password', 'forgotPassword')
 
-        }catch (e){
-            console.log(e)
+        }catch (error){
+            console.log(error)
             res.status(400).json({
-                message: e
+                message: error
             })
         }
     }

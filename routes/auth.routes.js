@@ -3,7 +3,6 @@ const {check} = require('express-validator')
 const router = Router()
 const authController = require('../contoller/auth/authUserController')
 
-// /api/auth/register
 router.post(
     '/signup',
     [
@@ -14,7 +13,6 @@ router.post(
     authController.createUser
 );
 
-// /api/auth/login
 router.post(
     '/login',
     [
@@ -26,8 +24,9 @@ router.post(
 
 router.post(
     '/confirm',
-    authController.confirm
+    authController.confirmEmail
 )
+
 router.post(
     '/forgotPassword',
     authController.forgotPassword
@@ -37,4 +36,5 @@ router.post(
     '/resetPassword',
     authController.resetPassword
 )
+
 module.exports = router

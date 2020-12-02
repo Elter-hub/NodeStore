@@ -11,12 +11,11 @@ module.exports = async (user, data, subject, template) => {
         }
     });
 
-
     transport.use('compile', hbs({
         viewEngine: {
             defaultLayout: "layout",
-            layoutsDir: "/home/ihor/beverages/views/layouts",
-            partialsDir: "/home/ihor/beverages/views/partials",
+            layoutsDir: process.cwd() + "/views/layouts",
+            partialsDir: process.cwd() + "/views/partials",
         },
         viewPath: 'views',
         extname: ".hbs",
@@ -32,10 +31,10 @@ module.exports = async (user, data, subject, template) => {
         }
     };
 
+    //WHat should i return here????
     const info = await transport.sendMail(mailOptions,
         (err, data) => {
             if (err) {
-                console.log(err)
                 return console.log('Error occurs');
             }
             return console.log('Email sent!!!');

@@ -6,3 +6,5 @@ db.mongoose = mongoose;
 db.user = require("./User.model");
 
 module.exports = db;
+
+//TODO need that file att all???

@@ -19,7 +19,6 @@ module.exports = {
             }
 
             const {email, password} = req.body
-
             const candidate = await User.findOne({ email })
 
             if (candidate) {
@@ -42,7 +41,7 @@ module.exports = {
 
             res.status(201).json({ message: 'User created' })
 
-        } catch (e) {
+        } catch (error) {
             res.status(500).json({ message: 'Something went wrong, please try again' })
         }
     }
