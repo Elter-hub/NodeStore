@@ -1,6 +1,6 @@
-const mailer = require('nodemailer'),
-      {config} = require('../config'),
-      hbs = require('nodemailer-handlebars')
+const mailer = require('nodemailer');
+const hbs = require('nodemailer-handlebars');
+const { config } = require('../config');
 
 module.exports = async (user, data, subject, template) => {
     const transport = mailer.createTransport({
@@ -13,31 +13,34 @@ module.exports = async (user, data, subject, template) => {
 
     transport.use('compile', hbs({
         viewEngine: {
-            defaultLayout: "layout",
-            layoutsDir: process.cwd() + "/views/layouts",
-            partialsDir: process.cwd() + "/views/partials",
+            defaultLayout: 'layout',
+            layoutsDir: `${process.cwd()}/views/layouts`,
+            partialsDir: `${process.cwd()}/views/partials`,
         },
         viewPath: 'views',
-        extname: ".hbs",
-    }))
+        extname: '.hbs',
+    }));
 
     const mailOptions = {
         from: config.EMAIL_NAME,
         to: user.email,
-        subject: subject,
-        template: template,
+        subject,
+        template,
         context: {
-            data: data
+            data
         }
     };
 
-    //WHat should i return here????
-    const info = await transport.sendMail(mailOptions,
-        (error, data) => {
+    // WHat should i return here????
+    await transport.sendMail(mailOptions,
+        (error) => {
             if (error) {
+                // eslint-disable-next-line no-console
                 console.log('Error occurs');
-                console.log(error)
+                // eslint-disable-next-line no-console
+                console.log(error);
             }
-             console.log('Email sent!!!');
+            // eslint-disable-next-line no-console
+            console.log('Email sent!!!');
         });
-}
+};

@@ -10,29 +10,40 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="before installing lint and refresh">
-      <change afterPath="$PROJECT_DIR$/helpers/createAuthTokens.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/checkRefreshExpMiddleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/auth/refreshTokens.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="seems everything works">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth/confirmEmail.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth/createUser.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth/loginUser.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contoller/auth/authUserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/contoller/auth/authUserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/createAuthTokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/createAuthTokens.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/sendEmailSignupConfirmation.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/sendEmailSignupConfirmation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/checkRefreshExpMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkRefreshExpMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/EmailConfirmationToken.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/EmailConfirmationToken.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/ForgotPasswordToken.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ForgotPasswordToken.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/confirmEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/confirmEmail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/createUserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/createUserService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/forgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/forgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/confirmEmail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/createUserService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/forgotPassword.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/loginUserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/loginUserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/loginUserService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/refreshTokens.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/refreshTokens.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/resetPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/resetPassword.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/userAction/userChangeProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/userAction/userChangeProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/userAction/userChangeProfile.js" beforeDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,13 +75,18 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.19.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="10.17.48" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -104,7 +120,8 @@
       <workItem from="1606899458184" duration="24167000" />
       <workItem from="1606942550126" duration="3056000" />
       <workItem from="1606945928407" duration="4724000" />
-      <workItem from="1606980569483" duration="3908000" />
+      <workItem from="1606980569483" duration="7207000" />
+      <workItem from="1606987788645" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -169,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606943329264</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="BEFORE ES LINT!!!">
+      <created>1606984724513</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606984724513</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +220,9 @@
     <MESSAGE value="before refactoring" />
     <MESSAGE value="before installing lint" />
     <MESSAGE value="before installing lint and refresh" />
-    <option name="LAST_COMMIT_MESSAGE" value="before installing lint and refresh" />
+    <MESSAGE value="BEFORE ES LINT!!!" />
+    <MESSAGE value="seems everything works" />
+    <option name="LAST_COMMIT_MESSAGE" value="seems everything works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606842845600">
@@ -223,28 +249,28 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606842763474" />
-    <state width="1825" height="334" key="GridCell.Tab.0.bottom" timestamp="1606952644747">
+    <state width="912" height="275" key="GridCell.Tab.0.bottom" timestamp="1606987777822">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="235" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606945413307" />
+    <state width="912" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606987777822" />
     <state width="1825" height="334" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1606952644747" />
     <state width="1825" height="334" key="GridCell.Tab.0.bottom/72.27.3768.1053@72.27.3768.1053" timestamp="1606949666444" />
-    <state width="1825" height="334" key="GridCell.Tab.0.center" timestamp="1606952644747">
+    <state width="912" height="275" key="GridCell.Tab.0.center" timestamp="1606987777821">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="235" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606945413306" />
+    <state width="912" height="275" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606987777821" />
     <state width="1825" height="334" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1606952644747" />
     <state width="1825" height="334" key="GridCell.Tab.0.center/72.27.3768.1053@72.27.3768.1053" timestamp="1606949666443" />
-    <state width="1825" height="334" key="GridCell.Tab.0.left" timestamp="1606952644746">
+    <state width="912" height="275" key="GridCell.Tab.0.left" timestamp="1606987777821">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="235" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606945413306" />
+    <state width="912" height="275" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606987777821" />
     <state width="1825" height="334" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1606952644746" />
     <state width="1825" height="334" key="GridCell.Tab.0.left/72.27.3768.1053@72.27.3768.1053" timestamp="1606949666442" />
-    <state width="1825" height="334" key="GridCell.Tab.0.right" timestamp="1606952644747">
+    <state width="912" height="275" key="GridCell.Tab.0.right" timestamp="1606987777822">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1825" height="235" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606945413307" />
+    <state width="912" height="275" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606987777822" />
     <state width="1825" height="334" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1606952644747" />
     <state width="1825" height="334" key="GridCell.Tab.0.right/72.27.3768.1053@72.27.3768.1053" timestamp="1606949666443" />
     <state width="1825" height="334" key="GridCell.Tab.1.bottom" timestamp="1606952644748">
@@ -319,10 +345,10 @@
     <state width="1825" height="235" key="GridCell.Tab.3.right/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606945413309" />
     <state width="1825" height="334" key="GridCell.Tab.3.right/72.27.1848.1053@72.27.1848.1053" timestamp="1606952644751" />
     <state width="1825" height="334" key="GridCell.Tab.3.right/72.27.3768.1053@72.27.3768.1053" timestamp="1606949666447" />
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1606814885835">
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1606987752022">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606814885835" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606987752022" />
     <state x="829" y="425" width="324" height="264" key="VCS.EditChangelistDialog" timestamp="1606825571412">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
