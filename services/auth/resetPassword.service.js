@@ -19,6 +19,7 @@ module.exports = {
             } else {
                 res.status(400).json({message: 'Something wrong'});
             }
+
         } catch (error) {
             res.status(400).json({
                 message: error

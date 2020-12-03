@@ -1,7 +1,8 @@
-const {Router} = require('express')
-const {check} = require('express-validator')
-const router = Router()
-const authController = require('../contoller/auth/authUserController')
+const {Router} = require('express'),
+    {check} = require('express-validator'),
+    router = Router(),
+    authController = require('../contoller/auth/authUserController'),
+    checkRefreshExpMiddleware = require('../middleware/checkRefreshExpMiddleware')
 
 router.post(
     '/signup',
@@ -35,6 +36,12 @@ router.post(
 router.post(
     '/resetPassword',
     authController.resetPassword
+)
+
+router.post(
+    '/refreshTokens',
+    checkRefreshExpMiddleware,
+    authController.refreshTokens
 )
 
 module.exports = router

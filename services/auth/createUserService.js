@@ -1,10 +1,10 @@
-const {validationResult} = require('express-validator')
-const User = require('../../models/User.model')
-const EmailConfirmationToken = require('../../models/EmailConfirmationToken.model')
-const bcrypt = require("bcrypt");
-const sentEmail = require('../../helpers/sendEmailSignupConfirmation')
-const jwt = require('jsonwebtoken');
-const {config} = require('../../config')
+const {validationResult} = require('express-validator'),
+    User = require('../../models/User.model'),
+    EmailConfirmationToken = require('../../models/EmailConfirmationToken.model'),
+    bcrypt = require("bcrypt"),
+    sentEmail = require('../../helpers/sendEmailSignupConfirmation'),
+    jwt = require('jsonwebtoken'),
+    {config} = require('../../config')
 
 module.exports = {
     createNewUser: async (req, res) => {
@@ -19,14 +19,14 @@ module.exports = {
             }
 
             const {email, password} = req.body
-            const candidate = await User.findOne({ email })
+            const candidate = await User.findOne({email})
 
             if (candidate) {
-                return res.status(409).json({ message: 'User with provided email already exist!' })
+                return res.status(409).json({message: 'User with provided email already exist!'})
             }
 
             const hashedPassword = await bcrypt.hash(password, 12)
-            const user = new User({ email, password: hashedPassword })
+            const user = new User({email, password: hashedPassword})
 
             const token = jwt.sign(
                 {userId: user.id},
@@ -39,10 +39,10 @@ module.exports = {
             await sentEmail(user, {token}, 'Please confirm your registration!', 'emailConfirm')
             await user.save()
 
-            res.status(201).json({ message: 'User created' })
+            res.status(201).json({message: 'User created'})
 
         } catch (error) {
-            res.status(500).json({ message: 'Something went wrong, please try again' })
+            res.status(500).json({message: 'Something went wrong, please try again'})
         }
     }
 }

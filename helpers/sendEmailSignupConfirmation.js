@@ -1,6 +1,6 @@
-const mailer = require('nodemailer');
-const {config} = require('../config')
-const hbs = require('nodemailer-handlebars')
+const mailer = require('nodemailer'),
+      {config} = require('../config'),
+      hbs = require('nodemailer-handlebars')
 
 module.exports = async (user, data, subject, template) => {
     const transport = mailer.createTransport({
@@ -33,10 +33,11 @@ module.exports = async (user, data, subject, template) => {
 
     //WHat should i return here????
     const info = await transport.sendMail(mailOptions,
-        (err, data) => {
-            if (err) {
-                return console.log('Error occurs');
+        (error, data) => {
+            if (error) {
+                console.log('Error occurs');
+                console.log(error)
             }
-            return console.log('Email sent!!!');
+             console.log('Email sent!!!');
         });
 }

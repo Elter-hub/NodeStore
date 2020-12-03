@@ -18,12 +18,12 @@ module.exports = {
                 config.JWT_FORGOT_PASSWORD_SECRET,
                 {expiresIn: config.JWT_FORGOT_PASSWORD_LIFETIME});
 
-            const forgotPasswordToken = await new ForgotPasswordToken({_userId: user.id, token})
+            const forgotPasswordToken = new ForgotPasswordToken({_userId: user.id, token})
             await forgotPasswordToken.save();
+
             await sentEmail(user, [email, token], 'Reset your password', 'forgotPassword')
 
         }catch (error){
-            console.log(error)
             res.status(400).json({
                 message: error
             })

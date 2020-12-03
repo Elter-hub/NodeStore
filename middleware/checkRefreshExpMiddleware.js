@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken'),
 
 module.exports = (req, res, next) => {
     try {
-        const token = req.headers.authorization.split(' ')[1]
+        const {refreshToken} = req.body;
 
-        if (!token) {
+        if (!refreshToken) {
             return res.status(401).json({ message: 'Not authorized' })
         }
-
-        req.user = jwt.verify(token, config.JWT_SECRET)
+        console.log('Refresh token from middleware ' + refreshToken);
+        req.user = jwt.verify(refreshToken, config.JWT_REFRESH_SECRET)
         next()
     } catch (e) {
         res.status(401).json({ message: 'Not authorized' })

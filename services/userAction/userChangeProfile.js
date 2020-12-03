@@ -26,8 +26,11 @@ module.exports = {
             const {email, newImageUrl} = req.body
             const user = await User.findOne({email})
             user.imageUrl = newImageUrl
+
             await user.save();
+
             res.status(202).json({message: 'Image successfully changed!'})
+
         } catch (error) {
             res.status(500).json({message: 'Something went wrong, please try again'})
         }
