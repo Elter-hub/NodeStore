@@ -13,25 +13,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="seems everything works">
-      <change afterPath="$PROJECT_DIR$/helpers/loginValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/resetPasswordValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/urlValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/userValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="some joi validators">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/EmailConfirmationToken.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/EmailConfirmationToken.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ForgotPasswordToken.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ForgotPasswordToken.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/createUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/createUser.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/loginUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/loginUser.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/resetPasswordValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/resetPasswordValidator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/resetPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/resetPassword.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +96,7 @@
       <workItem from="1606980569483" duration="7207000" />
       <workItem from="1606987788645" duration="7927000" />
       <workItem from="1607010736587" duration="12924000" />
-      <workItem from="1607076165593" duration="3488000" />
+      <workItem from="1607076165593" duration="3952000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -190,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606988776950</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="some joi validators">
+      <created>1607079793625</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607079793625</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +211,8 @@
     <MESSAGE value="before installing lint and refresh" />
     <MESSAGE value="BEFORE ES LINT!!!" />
     <MESSAGE value="seems everything works" />
-    <option name="LAST_COMMIT_MESSAGE" value="seems everything works" />
+    <MESSAGE value="some joi validators" />
+    <option name="LAST_COMMIT_MESSAGE" value="some joi validators" />
   </component>
   <component name="WindowStateProjectService">
     <state x="842" y="445" width="298" height="224" key="#ESLint" timestamp="1606993762206">

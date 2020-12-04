@@ -27,7 +27,6 @@ module.exports = {
                 res.status(400).json({ message: 'Something wrong' });
             }
         } catch (error) {
-            console.log(error);
             res.status(400).json({
                 message: error
             });

@@ -6,12 +6,10 @@ module.exports = Joi.object({
     newPassword: Joi.string().min(8).max(25).regex(PASSWORD_REGEX)
         .error((errors) => {
             errors.forEach((err) => {
-                console.log(err.code === 'string.pattern.base');
                 if (err.code === 'string.pattern.base') {
                     err.message = 'Password should contain at least 1 small 1 Capital and 1 Digit!';
                 }
             });
             return errors;
         })
-
 });
