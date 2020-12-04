@@ -1,18 +1,15 @@
-const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
 const { createAccessToken, createRefreshToken } = require('../../helpers/createAuthTokens');
+const loginValidator = require('../../helpers/loginValidator');
 
 module.exports = {
     loginUser: async (req, res) => {
         try {
-            const errors = validationResult(req);
+            const validationResult = loginValidator.validate(req.body);
 
-            if (!errors.isEmpty()) {
-                return res.status(400).json({
-                    errors: errors.array(),
-                    message: 'Incorrect credentials'
-                });
+            if (validationResult.error) {
+                throw new Error(validationResult.error.details[0].message);
             }
 
             const { email, password } = req.body;
@@ -27,12 +24,16 @@ module.exports = {
                 return res.status(400).json({ message: 'Wrong password, please try again' });
             }
 
+            if (!user.isVerified) {
+                res.status(405).json({ message: 'Please confirm your email' });
+            }
+
             const accessToken = createAccessToken(user.id, email);
             const refreshToken = createRefreshToken(user.id);
 
             res.json({ accessToken, refreshToken, user });
         } catch (error) {
-            res.status(500).json({ message: 'Something went wrong, please try again' });
+            res.status(500).json({ message: error.message });
         }
     }
 };

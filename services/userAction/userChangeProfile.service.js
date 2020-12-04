@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
+const urlValidator = require('../../helpers/urlValidator');
 
 module.exports = {
     userChangePassword: async (req, res) => {
@@ -23,6 +24,12 @@ module.exports = {
     changeImageUrl: async (req, res) => {
         try {
             const { email, newImageUrl } = req.body;
+            const isUrlValid = urlValidator.validate(newImageUrl);
+
+            if (isUrlValid.error) {
+                throw new Error(isUrlValid.error.details[0].message);
+            }
+
             const user = await User.findOne({ email });
             user.imageUrl = newImageUrl;
 
@@ -30,6 +37,7 @@ module.exports = {
 
             res.status(202).json({ message: 'Image successfully changed!' });
         } catch (error) {
+            console.log(error);
             res.status(500).json({ message: 'Something went wrong, please try again' });
         }
     }

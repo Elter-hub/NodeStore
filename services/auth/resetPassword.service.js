@@ -1,10 +1,17 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
 const ForgotPasswordToken = require('../../models/ForgotPasswordToken.model');
+const resetPasswordValidator = require('../../helpers/resetPasswordValidator');
 
 module.exports = {
     resetPassword: async (req, res) => {
         try {
+            const validationResult = resetPasswordValidator.validate(req.body);
+
+            if (validationResult.error) {
+                return res.status(400).json({ message: validationResult.error.details[0].message });
+            }
+
             const { email, newPassword, token } = req.body;
 
             const user = await User.findOne({ email });
@@ -20,6 +27,7 @@ module.exports = {
                 res.status(400).json({ message: 'Something wrong' });
             }
         } catch (error) {
+            console.log(error);
             res.status(400).json({
                 message: error
             });

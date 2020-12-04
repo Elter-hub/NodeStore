@@ -1,24 +1,22 @@
-const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const User = require('../../models/User.model');
 const EmailConfirmationToken = require('../../models/EmailConfirmationToken.model');
 const sentEmail = require('../../helpers/sendEmailSignupConfirmation');
 const { config } = require('../../config');
+const userValidator = require('../../helpers/userValidator');
 
 module.exports = {
     createNewUser: async (req, res) => {
         try {
-            const errors = validationResult(req);
+            const isUserValid = userValidator.validate(req.body);
 
-            if (!errors.isEmpty()) {
-                return res.status(400).json({
-                    errors: errors.array(),
-                    message: 'Invalid credentials'
-                });
+            if (isUserValid.error) {
+                throw new Error(isUserValid.error.details[0].message);
             }
 
-            const { email, password } = req.body;
+            const { username, email, password } = req.body;
             const candidate = await User.findOne({ email });
 
             if (candidate) {
@@ -26,7 +24,7 @@ module.exports = {
             }
 
             const hashedPassword = await bcrypt.hash(password, 12);
-            const user = new User({ email, password: hashedPassword });
+            const user = new User({ username, email, password: hashedPassword });
 
             const token = jwt.sign(
                 { userId: user.id },
@@ -42,7 +40,7 @@ module.exports = {
 
             res.status(201).json({ message: 'User created' });
         } catch (error) {
-            res.status(500).json({ message: 'Something went wrong, please try again' });
+            res.status(500).json({ message: error.message });
         }
     }
 };

@@ -4,7 +4,7 @@ const emailTokenSchema = new Schema({
     userId: { type: Types.ObjectId, required: true, ref: 'User' },
     token: { type: String, required: true },
     createdAt: {
-        type: Date, required: true, default: Date.now, expires: 86400
+        type: Date, default: Date.now, expires: 86400
     }
 });
 

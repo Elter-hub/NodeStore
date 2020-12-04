@@ -27,9 +27,7 @@ module.exports = {
             if (user) res.status(200).json({ message: 'You can change password by filling next form' });
             else res.status(404).json({ message: 'Email doesnt exist' });
         } catch (error) {
-            res.status(400).json({
-                message: error
-            });
+            res.status(400).json({ message: error.message });
         }
     }
 };
