@@ -26,5 +26,8 @@ module.exports = {
     MONGODB_URL: process.env.MONGODB_URL || 'mongodb://localhost:27017/beverages',
 
     EMAIL_NAME: process.env.EMAIL_NAME || 'ihor04@gmail.com',
-    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD
+    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
+
+    STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
+    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY
 };
