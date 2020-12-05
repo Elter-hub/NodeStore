@@ -5,9 +5,7 @@ const stripe = require('stripe')(STRIPE_SECRET_KEY);
 
 module.exports = async (req, res) => {
     try {
-        const {
-            email, token, sum, userId
-        } = req.body;
+        const { email, token, sum } = req.body;
         const customer = await stripe.customers.create({
             email,
             source: token,

@@ -14,7 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="stripe works fine">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/payment/buyProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/payment/buyProducts.service.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
@@ -105,7 +104,7 @@
       <workItem from="1607114309416" duration="6000" />
       <workItem from="1607116883381" duration="2238000" />
       <workItem from="1607158535364" duration="24254000" />
-      <workItem from="1607202804377" duration="940000" />
+      <workItem from="1607202804377" duration="1017000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -212,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607203985031</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="stripe works fine">
+      <created>1607204340438</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1607204340438</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,10 +385,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="829" y="425" width="324" height="264" key="VCS.EditChangelistDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606825571412" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607203987196">
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607204342228">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607203987196" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607204342228" />
     <state x="759" y="454" width="464" height="206" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606825790250">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
