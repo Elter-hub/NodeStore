@@ -1,9 +1,9 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const db = require("./models");
-const {userRoutes, authRoutes} = require('./routes');
-const {config} = require('./config')
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const db = require('./models');
+const { userRoutes, authRoutes, contentRoutes } = require('./routes');
+const { config } = require('./config');
 
 const app = express();
 const corsOptions = {
@@ -13,8 +13,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/user', userRoutes)
-app.use('/auth', authRoutes)
+app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
+app.use('/content', contentRoutes);
 
 db.mongoose
     .connect(config.MONGODB_URL, {
@@ -22,11 +23,12 @@ db.mongoose
         useUnifiedTopology: true,
         useCreateIndex: true
     })
+
     .then(() => {
-        console.log("Successfully connect to MongoDB.");
+        console.log('Successfully connect to MongoDB.');
     })
-    .catch(err => {
-        console.error("Connection error", err);
+    .catch((err) => {
+        console.error('Connection error', err);
         process.exit(1);
     });
 

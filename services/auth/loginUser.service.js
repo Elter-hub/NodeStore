@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
 const { createAccessToken, createRefreshToken } = require('../../helpers/createAuthTokens');
-const loginValidator = require('../../helpers/loginValidator');
+const loginValidator = require('../../validators/loginValidator');
 
 module.exports = {
     loginUser: async (req, res) => {

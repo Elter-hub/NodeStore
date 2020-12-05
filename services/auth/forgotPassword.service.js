@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../../models/User.model');
 const ForgotPasswordToken = require('../../models/ForgotPasswordToken.model');
-const sentEmail = require('../../helpers/sendEmailSignupConfirmation');
+const sentEmail = require('../../helpers/sendEmail');
 const { config } = require('../../config');
 
 module.exports = {

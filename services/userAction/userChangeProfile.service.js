@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
-const urlValidator = require('../../helpers/urlValidator');
+const urlValidator = require('../../validators/urlValidator');
 
 module.exports = {
     userChangePassword: async (req, res) => {
@@ -37,7 +37,6 @@ module.exports = {
 
             res.status(202).json({ message: 'Image successfully changed!' });
         } catch (error) {
-            console.log(error);
             res.status(500).json({ message: 'Something went wrong, please try again' });
         }
     }

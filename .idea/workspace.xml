@@ -14,9 +14,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="some joi validators">
+      <change afterPath="$PROJECT_DIR$/contoller/content.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Cart.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Product.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/content.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/addToCart.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/allProducts.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/removeFromCart.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/resetPasswordValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/resetPasswordValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/loginValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/loginValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/resetPasswordValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/resetPasswordValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/sendEmailSignupConfirmation.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/sendEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/urlValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/urlValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/userValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/userValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/createUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/createUser.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/loginUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/loginUser.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/resetPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/resetPassword.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +83,12 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/content" />
+      <recent name="$PROJECT_DIR$/validators" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
@@ -96,7 +122,10 @@
       <workItem from="1606980569483" duration="7207000" />
       <workItem from="1606987788645" duration="7927000" />
       <workItem from="1607010736587" duration="12924000" />
-      <workItem from="1607076165593" duration="3952000" />
+      <workItem from="1607076165593" duration="18791000" />
+      <workItem from="1607114309416" duration="6000" />
+      <workItem from="1607116883381" duration="2238000" />
+      <workItem from="1607158535364" duration="17561000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -182,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607079793625</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="some joi validators">
+      <created>1607080125258</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080125258</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,10 +383,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="829" y="425" width="324" height="264" key="VCS.EditChangelistDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606825571412" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1606988780720">
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607080127704">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606988780720" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607080127704" />
     <state x="759" y="454" width="464" height="206" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606825790250">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

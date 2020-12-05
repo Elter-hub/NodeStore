@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const { constants: { PASSWORD_REGEX } } = require('../constants');
 
+// To much code for custom message
 module.exports = Joi.object({
     email: Joi.string().email().required().max(40),
     newPassword: Joi.string().min(8).max(25).regex(PASSWORD_REGEX)

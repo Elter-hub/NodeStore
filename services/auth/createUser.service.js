@@ -2,10 +2,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../../models/User.model');
+const { Cart } = require('../../models/Cart.model');
 const EmailConfirmationToken = require('../../models/EmailConfirmationToken.model');
-const sentEmail = require('../../helpers/sendEmailSignupConfirmation');
+const sentEmail = require('../../helpers/sendEmail');
 const { config } = require('../../config');
-const userValidator = require('../../helpers/userValidator');
+const userValidator = require('../../validators/userValidator');
 
 module.exports = {
     createNewUser: async (req, res) => {
@@ -22,10 +23,12 @@ module.exports = {
             if (candidate) {
                 return res.status(409).json({ message: 'User with provided email already exist!' });
             }
-
             const hashedPassword = await bcrypt.hash(password, 12);
-            const user = new User({ username, email, password: hashedPassword });
+            const user = new User({
+                username, email, password: hashedPassword
+            });
 
+            // eslint-disable-next-line no-underscore-dangle
             const token = jwt.sign(
                 { userId: user.id },
                 config.JWT_CONFIRM_EMAIL_SECRET,
@@ -34,8 +37,11 @@ module.exports = {
 
             const emailConfirmationToken = new EmailConfirmationToken({ userId: user.id, token });
             await emailConfirmationToken.save();
+            // eslint-disable-next-line no-underscore-dangle
+            user.cart = new Cart({ userId: user._id });
 
-            await sentEmail(user, { token }, 'Please confirm your registration!', 'emailConfirm');
+            // TODO enable email
+            // await sentEmail(user, { token }, 'Please confirm your registration!', 'emailConfirm');
             await user.save();
 
             res.status(201).json({ message: 'User created' });

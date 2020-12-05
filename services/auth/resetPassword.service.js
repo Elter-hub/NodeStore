@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
 const ForgotPasswordToken = require('../../models/ForgotPasswordToken.model');
-const resetPasswordValidator = require('../../helpers/resetPasswordValidator');
+const resetPasswordValidator = require('../../validators/resetPasswordValidator');
 
 module.exports = {
     resetPassword: async (req, res) => {
