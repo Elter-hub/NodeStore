@@ -14,6 +14,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="stripe works fine">
+      <change afterPath="$PROJECT_DIR$/middleware/checkIsAdmin.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/addNewProduct.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/addQuantity.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/cancelPromotion.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/deleteProduct.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/content/promoteProduct.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contoller/content.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/contoller/content.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/createAuthTokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/createAuthTokens.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/sendEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/sendEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/EmailConfirmationToken.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/EmailConfirmationToken.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Product.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Product.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/content.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/content.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/loginUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/loginUser.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/allProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/allProducts.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/payment/buyProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/payment/buyProducts.service.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
@@ -104,7 +122,10 @@
       <workItem from="1607114309416" duration="6000" />
       <workItem from="1607116883381" duration="2238000" />
       <workItem from="1607158535364" duration="24254000" />
-      <workItem from="1607202804377" duration="1017000" />
+      <workItem from="1607202804377" duration="1716000" />
+      <workItem from="1607246258388" duration="11548000" />
+      <workItem from="1607281914354" duration="1554000" />
+      <workItem from="1607283537992" duration="2278000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -218,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607204340438</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="stripe works fine">
+      <created>1607204374747</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607204374747</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +417,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607204342228" />
+    <state x="717" y="270" width="548" height="573" key="VcsDiffUtil.ChangesDialog" timestamp="1607204786463">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="717" y="270" width="548" height="573" key="VcsDiffUtil.ChangesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607204786463" />
     <state x="759" y="454" width="464" height="206" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606825790250">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -397,9 +429,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607204238924" />
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1607030445825">
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1607251126322">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607030445825" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607251126322" />
   </component>
 </project>

@@ -22,7 +22,6 @@ module.exports = async (req, res) => {
         user.save();
         res.json({ message: 'Success' });
     } catch (error) {
-        console.log(error);
         res.status(400).json({ message: error });
     }
 };

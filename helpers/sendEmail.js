@@ -31,16 +31,12 @@ module.exports = async (user, data, subject, template) => {
         }
     };
 
-    // WHat should i return here????
     await transport.sendMail(mailOptions,
         (error) => {
             if (error) {
-                // eslint-disable-next-line no-console
                 console.log('Error occurs');
-                // eslint-disable-next-line no-console
                 console.log(error);
             }
-            // eslint-disable-next-line no-console
             console.log('Email sent!!!');
         });
 };
