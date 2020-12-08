@@ -3,10 +3,11 @@ const authMiddleware = require('../middleware/authMiddleware');
 const { changePassword, changeImage } = require('../contoller/auth/authUserController');
 const { addToCart, removeFromCart, buyProducts } = require('../contoller/content.controller');
 
-router.patch('/changePassword', authMiddleware, changePassword);
-router.patch('/changeImage', authMiddleware, changeImage);
-router.patch('/addToCart', authMiddleware, addToCart);
-router.patch('/removeFromCart', authMiddleware, removeFromCart);
-router.post('/buyProducts', authMiddleware, buyProducts);
+router.use('/', authMiddleware);
+router.patch('/changePassword', changePassword);
+router.patch('/changeImage', changeImage);
+router.patch('/addToCart', addToCart);
+router.patch('/removeFromCart', removeFromCart);
+router.post('/buyProducts', buyProducts);
 
 module.exports = router;
