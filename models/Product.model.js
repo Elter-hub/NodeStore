@@ -10,7 +10,4 @@ const productSchema = new Schema({
     totalQuantity: { type: Number, required: true },
 });
 
-module.exports = {
-    ProductModel: model('Product', productSchema),
-    productSchema
-};
+module.exports = model('Product', productSchema);

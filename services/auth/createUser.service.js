@@ -40,8 +40,7 @@ module.exports = {
             // eslint-disable-next-line no-underscore-dangle
             user.cart = new Cart({ userId: user._id });
 
-            // TODO enable email
-            // await sentEmail(user, { token }, 'Please confirm your registration!', 'emailConfirm');
+            await sentEmail(user, { token }, 'Please confirm your registration!', 'emailConfirm');
             await user.save();
 
             res.status(201).json({ message: 'User created' });

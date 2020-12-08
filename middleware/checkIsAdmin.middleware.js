@@ -11,8 +11,7 @@ module.exports = (req, res, next) => {
         const verify = jwt.verify(token, config.JWT_SECRET);
         const user = jwt.decode(token, config.JWT_SECRET);
 
-        const isAdmin = user.roles.includes('ROLE_ADMIN');
-        if (isAdmin) {
+        if (user.roles.includes('ROLE_ADMIN')) {
             next();
         } else {
             res.status(403).json({ message: 'Not authorized' });

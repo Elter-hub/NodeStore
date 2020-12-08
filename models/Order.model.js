@@ -8,7 +8,7 @@ const subOrder = {
 
 const orderSchema = new Schema({
     orders: [subOrder],
-    date: { type: Date, default: new Date('December 9, 2020') }
+    date: { type: Date, default: Date.now }
 });
 
 module.exports = model('Order', orderSchema);

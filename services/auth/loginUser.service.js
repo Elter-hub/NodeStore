@@ -28,8 +28,6 @@ module.exports = {
                 res.status(405).json({ message: 'Please confirm your email' });
             }
 
-            console.log(user);
-
             const accessToken = createAccessToken(user.id, email, user.roles);
             const refreshToken = createRefreshToken(user.id);
 

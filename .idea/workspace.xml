@@ -13,16 +13,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="product management based on roles works">
-      <change afterPath="$PROJECT_DIR$/models/Order.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/analytic/analytic.service.js" afterDir="false" />
+    <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="charts work">
+      <change afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contoller/content.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/contoller/content.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/checkIsAdmin.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkIsAdmin.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/content.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/content.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Order.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Order.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Product.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Product.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/analytic/analytic.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/analytic/analytic.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/createUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/createUser.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/loginUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/loginUser.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/resetPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/resetPassword.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/addNewProduct.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/addNewProduct.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/content/addQuantity.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/addQuantity.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/addToCart.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/addToCart.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/content/allProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/allProducts.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/cancelPromotion.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/cancelPromotion.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/deleteProduct.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/deleteProduct.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/promoteProduct.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/promoteProduct.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/content/removeFromCart.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/removeFromCart.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/payment/buyProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/payment/buyProducts.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/urlValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/urlValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validators/userValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/userValidator.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +137,7 @@
       <workItem from="1607338250543" duration="6024000" />
       <workItem from="1607361694897" duration="14001000" />
       <workItem from="1607415294465" duration="3825000" />
-      <workItem from="1607419671134" duration="6970000" />
+      <workItem from="1607419671134" duration="9638000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -249,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607286726895</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="charts work">
+      <created>1607430770944</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607430770944</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +305,8 @@
     <MESSAGE value="add/remove to Cart" />
     <MESSAGE value="stripe works fine" />
     <MESSAGE value="product management based on roles works" />
-    <option name="LAST_COMMIT_MESSAGE" value="product management based on roles works" />
+    <MESSAGE value="charts work" />
+    <option name="LAST_COMMIT_MESSAGE" value="charts work" />
   </component>
   <component name="WindowStateProjectService">
     <state x="842" y="445" width="298" height="231" key="#ESLint" timestamp="1607188263456">

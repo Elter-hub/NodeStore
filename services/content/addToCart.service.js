@@ -13,8 +13,8 @@ module.exports = {
             } else {
                 user.cart.products.push(product);
             }
-
             user.save();
+
             res.json(user.cart);
         } catch (error) {
             res.json({ message: error.message });

@@ -1,5 +1,5 @@
 const Order = require('../../models/Order.model');
-const { ProductModel } = require('../../models/Product.model');
+const Product = require('../../models/Product.model');
 
 module.exports = {
     analyticForSpecificProduct: async (req, res) => {
@@ -19,7 +19,6 @@ module.exports = {
                     .forEach((prod) => {
                         prodAnalytic.count = prod.count;
                     });
-
                 productAnalytic.push(prodAnalytic);
             });
             let result = [];
@@ -33,6 +32,7 @@ module.exports = {
                 return accumulate;
             }, {});
             result = result.sort((prod1, prod2) => (prod1.date > prod2.date ? 1 : -1));
+
             res.json(result);
         } catch (e) {
             res.json({ message: e.message });
@@ -40,7 +40,8 @@ module.exports = {
     },
     getAllLabels: async (req, res) => {
         try {
-            const allProducts = await ProductModel.find().select('label');
+            const allProducts = await Product.find().select('label');
+
             res.json(allProducts);
         } catch (error) {
             res.status(400).json({ message: error.message });
@@ -51,6 +52,7 @@ module.exports = {
         try {
             const allOrders = await Order.find().select('orders');
             const productAnalytic = [];
+
             allOrders.forEach((order) => order.orders.reduce((accum, prod) => {
                 if (!accum[prod.label]) {
                     accum[prod.label] = { label: prod.label, sum: 0 };
@@ -59,7 +61,7 @@ module.exports = {
                 accum[prod.label].sum += prod.price * prod.count;
                 return accum;
             }));
-            console.log(productAnalytic);
+
             const result = productAnalytic.reduce((accum, prod) => {
                 accum[prod.label] = 0;
                 accum[prod.label] += prod.sum;
@@ -67,7 +69,6 @@ module.exports = {
             }, {});
             res.json(result);
         } catch (error) {
-            console.error(error);
             res.status(400).json({ message: error.message });
         }
     }

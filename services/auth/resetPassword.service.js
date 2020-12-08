@@ -20,9 +20,7 @@ module.exports = {
             if (user && forgotPasswordToken) {
                 user.password = await bcrypt.hash(newPassword, 12);
                 await user.save();
-                res.json({
-                    message: 'Your password is successively changed! '
-                });
+                res.json({ message: 'Your password is successively changed! ' });
             } else {
                 res.status(400).json({ message: 'Something wrong' });
             }
