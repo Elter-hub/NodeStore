@@ -8,17 +8,16 @@ module.exports = (req, res, next) => {
         if (!token) {
             return res.status(401).json({ message: 'Not authorized' });
         }
-        jwt.verify(token, config.JWT_SECRET);
-
+        const verify = jwt.verify(token, config.JWT_SECRET);
         const user = jwt.decode(token, config.JWT_SECRET);
-        const isAdmin = user.roles.includes('ROLE_ADMIN');
 
+        const isAdmin = user.roles.includes('ROLE_ADMIN');
         if (isAdmin) {
             next();
         } else {
             res.status(403).json({ message: 'Not authorized' });
         }
     } catch (e) {
-        res.status(403).json({ message: 'Not authorized' });
+        res.status(403).json({ message: 'Not authorized authorized' });
     }
 };

@@ -1,11 +1,19 @@
 const { config: { STRIPE_SECRET_KEY } } = require('../../config');
 const User = require('../../models/User.model');
-// eslint-disable-next-line import/order
+const Order = require('../../models/Order.model');
 const stripe = require('stripe')(STRIPE_SECRET_KEY);
 
 module.exports = async (req, res) => {
     try {
-        const { email, token, sum } = req.body;
+        const {
+            email, token, sum, products
+        } = req.body;
+        console.log(products, 'buyProducts');
+        const order = new Order();
+        products.forEach((prod) => {
+            order.orders.push({ label: prod.label, price: prod.price, count: prod.count });
+        });
+        await order.save();
         const customer = await stripe.customers.create({
             email,
             source: token,
@@ -22,6 +30,6 @@ module.exports = async (req, res) => {
         user.save();
         res.json({ message: 'Success' });
     } catch (error) {
-        res.status(400).json({ message: error });
+        res.status(400).json({ message: error.message });
     }
 };

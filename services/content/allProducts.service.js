@@ -7,7 +7,6 @@ module.exports = {
             return res.json(allProducts.map((prod) => prod.toObject({ versionKey: false })));
         } catch (error) {
             res.json({ message: error.message });
-            console.log(error);
         }
     }
 };
