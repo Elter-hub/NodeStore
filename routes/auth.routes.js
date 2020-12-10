@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const {
     createUser, login, confirmEmail, forgotPassword, resetPassword, refreshTokens
-} = require('../contoller/auth/authUserController');
+} = require('../contoller/authUser.controller');
 const checkRefreshExpMiddleware = require('../middleware/checkRefreshExpMiddleware');
 
 const router = Router();

@@ -1,8 +1,8 @@
 const {
     createUser: { createNewUser }, login: { loginUser }, confirmEmail: { confirmEmail }, forgotPassword: { forgotPassword },
     resetPassword: { resetPassword }, refreshTokens: { refreshTokens }
-} = require('../../services/auth');
-const { userChangePassword, changeImageUrl } = require('../../services/userAction/userChangeProfile.service');
+} = require('../services/auth');
+const { userChangePassword, changeImageUrl } = require('../services/userAction/userChangeProfile.service');
 
 module.exports = {
     createUser: (req, res, next) => createNewUser(req, res, next, next),

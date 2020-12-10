@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const authMiddleware = require('../middleware/authMiddleware');
-const { changePassword, changeImage } = require('../contoller/auth/authUserController');
+const { changePassword, changeImage } = require('../contoller/authUser.controller');
 const { addToCart, removeFromCart, buyProducts } = require('../contoller/content.controller');
 
 router.use('/', authMiddleware);
