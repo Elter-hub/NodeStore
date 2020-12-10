@@ -14,31 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa3f306c-6a0b-49d3-945a-ddc337adc989" name="Default Changelist" comment="charts work">
-      <change afterPath="$PROJECT_DIR$/error/ErrorHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/error/errors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/error/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contoller/auth/authUserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/contoller/auth/authUserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contoller/content.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/contoller/content.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/analytic/analytic.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/analytic/analytic.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/confirmEmail.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/confirmEmail.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error/errors.js" beforeDir="false" afterPath="$PROJECT_DIR$/error/errors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/checkIsAdmin.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkIsAdmin.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/checkRefreshExpMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/checkRefreshExpMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/createUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/createUser.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/forgotPassword.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/loginUser.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/loginUser.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth/refreshTokens.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/refreshTokens.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/resetPassword.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/resetPassword.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/addNewProduct.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/addNewProduct.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/addQuantity.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/addQuantity.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/addToCart.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/addToCart.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/allProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/allProducts.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/cancelPromotion.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/cancelPromotion.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/deleteProduct.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/deleteProduct.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/promoteProduct.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/promoteProduct.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/content/removeFromCart.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/content/removeFromCart.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/payment/buyProducts.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/payment/buyProducts.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/userAction/userChangeProfile.service.js" afterDir="false" />
     </list>
     <list id="91b9fee7-e369-4165-96fd-fcdc8151dada" name="New changelist" comment="" />
@@ -141,7 +125,7 @@
       <workItem from="1607419671134" duration="10389000" />
       <workItem from="1607436441962" duration="1726000" />
       <workItem from="1607521131458" duration="87000" />
-      <workItem from="1607595082226" duration="9260000" />
+      <workItem from="1607595082226" duration="11256000" />
     </task>
     <task id="LOCAL-00001" summary="firs commit">
       <created>1606825057413</created>
@@ -290,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607443658766</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="charts work">
+      <created>1607604358972</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607604358972</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,10 +450,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="829" y="425" width="324" height="264" key="VCS.EditChangelistDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1606825571412" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607443663846">
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1607604361392">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607443663846" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1607604361392" />
     <state x="591" y="289" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1607292236025" />
     <state x="717" y="270" width="548" height="573" key="VcsDiffUtil.ChangesDialog" timestamp="1607204786463">
       <screen x="72" y="27" width="1848" height="1053" />

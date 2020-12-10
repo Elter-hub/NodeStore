@@ -26,4 +26,5 @@ module.exports = {
     PRODUCT_DELETED: 'Product was deleted from storage',
     PAYMENT_ACCEPTED: 'Thank you for your purchase',
     IMAGE_CHANGED: 'Congrats, you successfully changed image',
+    INVALID_URL: 'Please check url, seems it is incorrect',
 };

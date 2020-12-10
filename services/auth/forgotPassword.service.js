@@ -25,12 +25,11 @@ module.exports = {
             const forgotPasswordToken = new ForgotPasswordToken({ userId: user.id, token });
             await forgotPasswordToken.save();
 
-            // TODO enable sending email
-            // await sentEmail(user, [
-            //     email,
-            //     token
-            // ], 'Reset your password', 'forgotPassword');
-            // Fucking linter not allowing ternary
+            await sentEmail(user, [
+                email,
+                token
+            ], 'Reset your password', 'forgotPassword');
+
             if (user) res.json({ message: CHANGE_PASSWORD });
         } catch (error) {
             next(error);

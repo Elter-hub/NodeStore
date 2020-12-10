@@ -7,11 +7,8 @@ const EmailConfirmationToken = require('../../models/EmailConfirmationToken.mode
 const sentEmail = require('../../helpers/sendEmail');
 const { config } = require('../../config');
 const userValidator = require('../../validators/userValidator');
-const {
-    constants: {
-        CREATED, USER_CREATED, CONFLICT, USER_EXIST
-    }
-} = require('../../constants');
+const { constants: { CREATED, USER_CREATED } } = require('../../constants');
+const { ErrorHandler, errors: { INVALID_USER_DATA, EMAIL_ALREADY_EXIST } } = require('../../error');
 
 module.exports = {
     createNewUser: async (req, res, next) => {
@@ -19,14 +16,14 @@ module.exports = {
             const isUserValid = userValidator.validate(req.body);
 
             if (isUserValid.error) {
-                throw new Error(isUserValid.error.details[0].message);
+                throw new ErrorHandler(INVALID_USER_DATA.message, INVALID_USER_DATA.code);
             }
 
             const { username, email, password } = req.body;
             const candidate = await User.findOne({ email });
 
             if (candidate) {
-                return res.status(CONFLICT).json({ message: USER_EXIST });
+                throw new ErrorHandler(EMAIL_ALREADY_EXIST.message, EMAIL_ALREADY_EXIST.code);
             }
             const hashedPassword = await bcrypt.hash(password, 12);
             const user = new User({

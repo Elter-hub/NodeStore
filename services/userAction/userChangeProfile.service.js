@@ -1,8 +1,12 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
 const urlValidator = require('../../validators/urlValidator');
-const { ErrorHandler, errors: { PASSWORD_MISMATCH } } = require('../../error');
-const { constants: { CHANGE_PASSWORD_SUCCESS, ACCEPTED, IMAGE_CHANGED } } = require('../../constants');
+const { ErrorHandler, errors: { PASSWORD_MISMATCH, INVALID_URL } } = require('../../error');
+const {
+    constants: {
+        CHANGE_PASSWORD_SUCCESS, ACCEPTED, IMAGE_CHANGED
+    }
+} = require('../../constants');
 
 module.exports = {
     userChangePassword: async (req, res, next) => {
@@ -29,7 +33,7 @@ module.exports = {
             const isUrlValid = urlValidator.validate(newImageUrl);
 
             if (isUrlValid.error) {
-                throw new Error(isUrlValid.error.details[0].message);
+                throw new ErrorHandler(INVALID_URL.message, INVALID_URL.code);
             }
 
             const user = await User.findOne({ email });

@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { config } = require('../config');
+const { ErrorHandler, errors: { NOT_PERMITTED } } = require('../error');
 
 module.exports = (req, res, next) => {
     try {
@@ -14,9 +15,9 @@ module.exports = (req, res, next) => {
         if (user.roles.includes('ROLE_ADMIN')) {
             next();
         } else {
-            res.status(403).json({ message: 'Not authorized' });
+            throw new ErrorHandler(NOT_PERMITTED.message, NOT_PERMITTED.code);
         }
-    } catch (e) {
-        res.status(403).json({ message: 'Not authorized authorized' });
+    } catch (error) {
+        next(error);
     }
 };

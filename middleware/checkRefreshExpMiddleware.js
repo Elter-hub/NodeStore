@@ -1,16 +1,18 @@
 const jwt = require('jsonwebtoken');
 const { config } = require('../config');
+const { ErrorHandler, errors: { UNAUTHORIZED } } = require('../error');
 
 module.exports = (req, res, next) => {
     try {
         const { refreshToken } = req.body;
 
         if (!refreshToken) {
-            return res.status(401).json({ message: 'Not authorized' });
+            throw new ErrorHandler(UNAUTHORIZED.message, UNAUTHORIZED.code);
         }
+
         req.user = jwt.verify(refreshToken, config.JWT_REFRESH_SECRET);
         next();
-    } catch (e) {
-        res.status(401).json({ message: 'Not authorized' });
+    } catch (error) {
+        next(error);
     }
 };
