@@ -1,12 +1,13 @@
 const Product = require('../../models/Product.model');
+const { constants: { NEW_PRODUCT_ADDED, CREATED } } = require('../../constants');
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
     try {
         const product = new Product(req.body);
         await product.save();
 
-        res.status(201).json({ message: 'Product created' });
+        res.status(CREATED).json({ message: NEW_PRODUCT_ADDED });
     } catch (error) {
-        res.json({ message: error.message });
+        next(error);
     }
 };

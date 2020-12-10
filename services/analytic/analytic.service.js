@@ -2,7 +2,7 @@ const Order = require('../../models/Order.model');
 const Product = require('../../models/Product.model');
 
 module.exports = {
-    analyticForSpecificProduct: async (req, res) => {
+    analyticForSpecificProduct: async (req, res, next) => {
         try {
             const { label } = req.query;
             const allOrders = await Order.find({ orders: { $elemMatch: { label } } });
@@ -21,7 +21,9 @@ module.exports = {
                     });
                 productAnalytic.push(prodAnalytic);
             });
+
             let result = [];
+
             productAnalytic.reduce((accumulate, value) => {
                 if (!accumulate[value.date]) {
                     accumulate[value.date] = { date: value.date, count: 0 };
@@ -34,21 +36,21 @@ module.exports = {
             result = result.sort((prod1, prod2) => (prod1.date > prod2.date ? 1 : -1));
 
             res.json(result);
-        } catch (e) {
-            res.json({ message: e.message });
+        } catch (error) {
+            next(error);
         }
     },
-    getAllLabels: async (req, res) => {
+    getAllLabels: async (req, res, next) => {
         try {
             const allProducts = await Product.find().select('label');
 
             res.json(allProducts);
         } catch (error) {
-            res.status(400).json({ message: error.message });
+            next(error);
         }
     },
 
-    analyticForAllProducts: async (req, res) => {
+    analyticForAllProducts: async (req, res, next) => {
         try {
             const allOrders = await Order.find().select('orders');
             const productAnalytic = [];
@@ -67,9 +69,10 @@ module.exports = {
                 accum[prod.label] += prod.sum;
                 return accum;
             }, {});
+
             res.json(result);
         } catch (error) {
-            res.status(400).json({ message: error.message });
+            next(error);
         }
     }
 };

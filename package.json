@@ -35,7 +35,8 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "pug": "^3.0.0",
     "shortid": "^2.2.16",
-    "stripe": "^8.127.0"
+    "stripe": "^8.127.0",
+    "helmet": "^4.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",

@@ -7,9 +7,14 @@ const EmailConfirmationToken = require('../../models/EmailConfirmationToken.mode
 const sentEmail = require('../../helpers/sendEmail');
 const { config } = require('../../config');
 const userValidator = require('../../validators/userValidator');
+const {
+    constants: {
+        CREATED, USER_CREATED, CONFLICT, USER_EXIST
+    }
+} = require('../../constants');
 
 module.exports = {
-    createNewUser: async (req, res) => {
+    createNewUser: async (req, res, next) => {
         try {
             const isUserValid = userValidator.validate(req.body);
 
@@ -21,7 +26,7 @@ module.exports = {
             const candidate = await User.findOne({ email });
 
             if (candidate) {
-                return res.status(409).json({ message: 'User with provided email already exist!' });
+                return res.status(CONFLICT).json({ message: USER_EXIST });
             }
             const hashedPassword = await bcrypt.hash(password, 12);
             const user = new User({
@@ -43,9 +48,9 @@ module.exports = {
             await sentEmail(user, { token }, 'Please confirm your registration!', 'emailConfirm');
             await user.save();
 
-            res.status(201).json({ message: 'User created' });
+            res.status(CREATED).json({ message: USER_CREATED });
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            next(error);
         }
     }
 };

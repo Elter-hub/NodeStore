@@ -2,9 +2,11 @@ const bcrypt = require('bcrypt');
 const User = require('../../models/User.model');
 const ForgotPasswordToken = require('../../models/ForgotPasswordToken.model');
 const resetPasswordValidator = require('../../validators/resetPasswordValidator');
+const { ErrorHandler, errors: { SERVER_ERROR } } = require('../../error');
+const { constants: { CHANGE_PASSWORD_SUCCESS } } = require('../../constants');
 
 module.exports = {
-    resetPassword: async (req, res) => {
+    resetPassword: async (req, res, next) => {
         try {
             const validationResult = resetPasswordValidator.validate(req.body);
 
@@ -20,14 +22,12 @@ module.exports = {
             if (user && forgotPasswordToken) {
                 user.password = await bcrypt.hash(newPassword, 12);
                 await user.save();
-                res.json({ message: 'Your password is successively changed! ' });
+                res.json({ message: CHANGE_PASSWORD_SUCCESS });
             } else {
-                res.status(400).json({ message: 'Something wrong' });
+                throw new ErrorHandler(SERVER_ERROR.message, SERVER_ERROR.code);
             }
         } catch (error) {
-            res.status(400).json({
-                message: error
-            });
+            next(error);
         }
     }
 };

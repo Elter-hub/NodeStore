@@ -1,6 +1,6 @@
 const User = require('../../models/User.model');
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
     try {
         const { email, product } = req.body;
         const user = await User.findOne({ email });
@@ -11,6 +11,6 @@ module.exports = async (req, res) => {
 
         res.json(user.cart.products);
     } catch (error) {
-        res.json({ message: error.message });
+        next(error);
     }
 };

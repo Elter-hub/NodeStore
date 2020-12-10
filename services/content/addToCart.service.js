@@ -1,7 +1,7 @@
 const User = require('../../models/User.model');
 
 module.exports = {
-    addToCart: async (req, res) => {
+    addToCart: async (req, res, next) => {
         try {
             const { email, product } = req.body;
 
@@ -17,7 +17,7 @@ module.exports = {
 
             res.json(user.cart);
         } catch (error) {
-            res.json({ message: error.message });
+            next(error);
         }
     }
 };

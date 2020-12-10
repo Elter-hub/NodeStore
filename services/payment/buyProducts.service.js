@@ -1,9 +1,10 @@
 const { config: { STRIPE_SECRET_KEY } } = require('../../config');
 const User = require('../../models/User.model');
 const Order = require('../../models/Order.model');
+const { constants: { PAYMENT_ACCEPTED } } = require('../../constants');
 const stripe = require('stripe')(STRIPE_SECRET_KEY);
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
     try {
         const {
             email, token, sum, products
@@ -31,8 +32,8 @@ module.exports = async (req, res) => {
         user.cart.products = [];
         user.save();
 
-        res.json({ message: 'Success' });
+        res.json({ message: PAYMENT_ACCEPTED });
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        next(error);
     }
 };

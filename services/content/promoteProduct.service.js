@@ -1,6 +1,6 @@
 const Product = require('../../models/Product.model');
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
     try {
         const { _id, price, newPrice } = req.body;
         const product = await Product.findByIdAndUpdate(_id, {
@@ -12,6 +12,6 @@ module.exports = async (req, res) => {
 
         res.json(product);
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        next(error);
     }
 };

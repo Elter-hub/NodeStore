@@ -3,12 +3,18 @@ const User = require('../../models/User.model');
 const ForgotPasswordToken = require('../../models/ForgotPasswordToken.model');
 const sentEmail = require('../../helpers/sendEmail');
 const { config } = require('../../config');
+const { constants: { CHANGE_PASSWORD } } = require('../../constants');
+const { ErrorHandler, errors: { EMAIL_DOESNT_EXIST } } = require('../../error');
 
 module.exports = {
-    forgotPassword: async (req, res) => {
+    forgotPassword: async (req, res, next) => {
         try {
             const { email } = req.body;
             const user = await User.findOne({ email });
+
+            if (!user) {
+                throw new ErrorHandler(EMAIL_DOESNT_EXIST.message, EMAIL_DOESNT_EXIST.code);
+            }
 
             const token = jwt.sign(
                 { userId: user.id },
@@ -19,15 +25,15 @@ module.exports = {
             const forgotPasswordToken = new ForgotPasswordToken({ userId: user.id, token });
             await forgotPasswordToken.save();
 
-            await sentEmail(user, [
-                email,
-                token
-            ], 'Reset your password', 'forgotPassword');
+            // TODO enable sending email
+            // await sentEmail(user, [
+            //     email,
+            //     token
+            // ], 'Reset your password', 'forgotPassword');
             // Fucking linter not allowing ternary
-            if (user) res.status(200).json({ message: 'You can change password by filling next form' });
-            else res.status(404).json({ message: 'Email doesnt exist' });
+            if (user) res.json({ message: CHANGE_PASSWORD });
         } catch (error) {
-            res.status(400).json({ message: error.message });
+            next(error);
         }
     }
 };

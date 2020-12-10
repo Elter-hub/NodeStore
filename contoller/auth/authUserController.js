@@ -5,12 +5,12 @@ const {
 const { userChangePassword, changeImageUrl } = require('../../services/userAction/userChangeProfile.service');
 
 module.exports = {
-    createUser: (req, res) => createNewUser(req, res),
-    login: (req, res) => loginUser(req, res),
-    confirmEmail: (req, res) => confirmEmail(req, res),
-    changePassword: (req, res) => userChangePassword(req, res),
-    changeImage: (req, res) => changeImageUrl(req, res),
-    forgotPassword: (req, res) => forgotPassword(req, res),
-    resetPassword: (req, res) => resetPassword(req, res),
-    refreshTokens: (req, res) => refreshTokens(req, res)
+    createUser: (req, res, next) => createNewUser(req, res, next, next),
+    login: (req, res, next) => loginUser(req, res, next),
+    confirmEmail: (req, res, next) => confirmEmail(req, res, next),
+    changePassword: (req, res, next) => userChangePassword(req, res, next),
+    changeImage: (req, res, next) => changeImageUrl(req, res, next),
+    forgotPassword: (req, res, next) => forgotPassword(req, res, next),
+    resetPassword: (req, res, next) => resetPassword(req, res, next),
+    refreshTokens: (req, res, next) => refreshTokens(req, res, next)
 };
